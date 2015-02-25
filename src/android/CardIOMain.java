@@ -53,6 +53,7 @@ public class CardIOMain extends Activity {
                 
                 try {
                     cardObj.put("card_number",scanResult.cardNumber);
+                    cardObj.put("card_type",scanResult.getCardType().getDisplayName("en-US"));
                     cardObj.put("redacted_card_number", scanResult.getFormattedCardNumber());
                     if (scanResult.isExpiryValid()) {
                         cardObj.put("expiry_month",scanResult.expiryMonth);
