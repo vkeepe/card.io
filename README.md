@@ -143,9 +143,11 @@ Android
 -------
 
 Before you build in release mode, make sure to adjust your proguard configuration by adding the following to `proguard.cnf`:
+```
     -keep class io.card.** { *; }
     -keep class com.keepe.** { *; }
     -keepclassmembers class io.card.** { *;}
+```
 License
 -------
 
