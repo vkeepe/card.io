@@ -17,6 +17,8 @@ The PayPal SDK Cordova/Phonegap Plugin adds support for the CardIO iOS & Android
    $ cd ScanCard
    $ cordova platform add ios
    $ cordova platform add android
+   $ cordova plugin add com.keepe.cardio
+   OR
    $ cordova plugin add https://github.com/vkeepe/card.io.git
 ```
 
