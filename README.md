@@ -3,6 +3,9 @@ card.io iOS & Android plug-in for Cordova
 
 This plug-in exposes card.io credit card scanning.
 
+[Android SDK](https://github.com/card-io/card.io-Android-SDK.git).
+[iOS SDK](https://github.com/card-io/card.io-iOS-SDK.git).
+
 Integration instructions
 ------------------------
 
@@ -123,7 +126,7 @@ Sample HTML + JS
                     "expiry": true,
                     "cvv": true,
                     "zip": true,
-                    "supressManual": false,
+                    "suppressManual": false,
                     "suppressConfirm": false,
                     "hideLogo": true
                 },
