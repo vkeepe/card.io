@@ -1,14 +1,12 @@
-card.io iOS plug-in for Phone Gap
----------------------------------
+card.io iOS & Android plug-in for Cordova
+-----------------------------------------
 
 This plug-in exposes card.io credit card scanning.
-
-Note: If you would like to actually process a credit card charge, you might be interested in the [PayPal iOS SDK Cordova/PhoneGap Plug-in](https://github.com/paypal/PayPal-Cordova-Plugin).
 
 Integration instructions
 ------------------------
 
-The PayPal SDK Cordova/Phonegap Plugin adds support for the CardIO iOS platform. It uses the native CardIO library. Cordova plugin management will set up all the required capabilities/frameworks for the project. The only bit left for you to do is to add necessary files, as described below.
+The PayPal SDK Cordova/Phonegap Plugin adds support for the CardIO iOS & Android platform. It uses the native CardIO library. Cordova plugin management will set up all the required capabilities/frameworks for the project. The only bit left for you to do is to add necessary files, as described below.
 
 1.	Follow the official [Cordova](https://cordova.apache.org) documentation to install command line tools or [Phonegap](http://phonegap.com/install/).
 2.	Create project, add plugin and platforms:
@@ -18,7 +16,8 @@ The PayPal SDK Cordova/Phonegap Plugin adds support for the CardIO iOS platform.
    $ cordova create ScanCard com.mycompany.scancard "ScanCard"
    $ cd ScanCard
    $ cordova platform add ios
-   $ cordova plugin add https://github.com/card-io/card.io-iOS-SDK-PhoneGap
+   $ cordova platform add android
+   $ cordova plugin add https://github.com/vkeepe/card.io.git
 ```
 
 1.	Follow Your app integration section below.
@@ -119,11 +118,12 @@ Sample HTML + JS
             }
             scanBtn.onclick = function (e) {
               CardIO.scan({
-                  "collect_expiry": true,
-                  "collect_cvv": false,
-                  "collect_zip": false,
-                  "shows_first_use_alert": true,
-                  "disable_manual_entry_buttons": false
+                    "expiry": true,
+                    "cvv": true,
+                    "zip": true,
+                    "supressManual": false,
+                    "suppressConfirm": false,
+                    "hideLogo": true
                 },
                 onCardIOComplete,
                 onCardIOCancel

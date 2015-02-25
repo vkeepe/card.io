@@ -53,6 +53,16 @@
         paymentViewController.disableManualEntryButtons = [disableManualEntryButtons boolValue];
     }
 
+    NSNumber *suppressConfirm = [options objectForKey:@"suppressConfirm"];
+    if(suppressConfirm) {
+        paymentViewController.suppressScanConfirmation = [suppressConfirm boolValue];
+    }
+    
+    NSNumber *hideLogo = [options objectForKey:@"hideLogo"];
+    if(hideLogo) {
+        paymentViewController.hideCardIOLogo = [hideLogo boolValue];
+    }
+    
     // if it is nil, its ok.
     NSString *languageOrLocale = [[[NSLocale alloc] initWithLocaleIdentifier:[options objectForKey:@"languageOrLocale"]] localeIdentifier];
     if (languageOrLocale) {

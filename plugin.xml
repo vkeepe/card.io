@@ -55,5 +55,47 @@
         <framework src="libc++.dylib" />
 
     </platform>
-
+    
+    <!-- android -->
+    <platform name="android">           
+        <lib-file src="src/android/lib/card.io.jar" arch="device" />
+        <lib-file src="src/android/lib/arm64-v8a" arch="device" />
+        <lib-file src="src/android/lib/armeabi" arch="device" />
+        <lib-file src="src/android/lib/armeabi-v7a" arch="device" />      
+        <lib-file src="src/android/lib/mips" arch="device" />
+        <lib-file src="src/android/lib/mips64" arch="device" />
+        <lib-file src="src/android/lib/x86" arch="device" />
+        <lib-file src="src/android/lib/x86_64" arch="device" />
+            
+        <source-file src="src/android/CardIOMain.java" 
+            target-dir="src/com/keepe/plugins/cardio" />            
+        <source-file src="src/android/CardIO.java" 
+            target-dir="src/com/keepe/plugins/cardio" />
+                
+        <config-file target="res/xml/config.xml" parent="/*">        
+            <feature name="CardIO">
+                <param name="android-package" value="com.keepe.plugins.cardio.CardIO"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:configChanges="orientation|keyboardHidden" android:name="com.keepe.plugins.cardio.CardIOMain" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
+                <intent-filter>
+                    <action android:name="com.keepe.plugins.cardio.SCAN" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </activity>
+            <activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation"
+                  android:hardwareAccelerated="true"/>
+            <activity android:name="io.card.payment.DataEntryActivity" android:screenOrientation="portrait"/>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.VIBRATE" />
+            <uses-feature android:name="android.hardware.camera" android:required="false" />
+            <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+            <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+        </config-file>
+    </platform>
 </plugin>
