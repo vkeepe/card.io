@@ -123,7 +123,7 @@ Sample HTML + JS
                     "expiry": true,
                     "cvv": true,
                     "zip": true,
-                    "supressManual": false,
+                    "suppressManual": false,
                     "suppressConfirm": false,
                     "hideLogo": true
                 },
