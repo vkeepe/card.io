@@ -1,0 +1,37 @@
+{
+  "name": "card.io",
+  "version": "1.0.6",
+  "description": "This plugin allows to add CardIO to your application using CardIO Native library. Supports iOS & Android",
+  "cordova": {
+    "id": "cordova-plugin-keepe-cardio",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkeepe/card.io.git"
+  },
+  "keywords": [
+    "cordova",
+    "card scan",
+    "scanner",
+    "card.io",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "",
+  "license": "MIT License, see LICENSE.md for details",
+  "bugs": {
+    "url": "https://github.com/vkeepe/card.io/issues"
+  },
+  "homepage": "https://github.com/vkeepe/card.io#readme"
+}
