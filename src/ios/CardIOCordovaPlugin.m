@@ -48,7 +48,7 @@
         paymentViewController.collectExpiry = [collectExpiry boolValue];
     }
 
-    NSNumber *disableManualEntryButtons = [options objectForKey:@"supressManual"];
+    NSNumber *disableManualEntryButtons = [options objectForKey:@"suppressManual"];
     if(disableManualEntryButtons) {
         paymentViewController.disableManualEntryButtons = [disableManualEntryButtons boolValue];
     }
