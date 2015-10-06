@@ -154,6 +154,8 @@ Before you build in release mode, make sure to adjust your proguard configuratio
     -keep class io.card.** { *; }
     -keep class com.keepe.** { *; }
     -keepclassmembers class io.card.** { *;}
+    -dontwarn io.card.payment.CardIOActivity
+    (See bug: https://github.com/card-io/card.io-Android-SDK/issues/86)
 ```
 License
 -------
