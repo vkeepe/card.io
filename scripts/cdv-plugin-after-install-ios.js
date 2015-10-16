@@ -4,7 +4,7 @@ module.exports = function(ctx) {
     
     var exec = require('child_process').exec, child;
 
-    var cmdExecute = 'unzip plugins/com.keepe.cardio/src/ios/CardIO/libCardIO.a.zip -d plugins/com.keepe.cardio/src/ios/CardIO/'
+    var cmdExecute = 'unzip -f plugins/com.keepe.cardio/src/ios/CardIO/libCardIO.a.zip -d plugins/com.keepe.cardio/src/ios/CardIO/'
     child = exec(cmdExecute, function(error, stdout, stderr) {
         if (error !== null) {
             console.log('exec error: ' + error);
