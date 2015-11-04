@@ -20,9 +20,7 @@
 
     <!-- ios -->
     <platform name="ios">
-        <!--
         <hook type="before_plugin_install" src="scripts/cdv-plugin-after-install-ios.js" />
-        -->
         <config-file target="config.xml" parent="/*">
             <feature name="CardIO">
                 <param name="ios-package" value="CardIOCordovaPlugin" onload="false" />
@@ -43,11 +41,8 @@
         <header-file src="src/ios/CardIO/CardIOView.h" />
         <header-file src="src/ios/CardIO/CardIOViewDelegate.h" />
         <source-file src="src/ios/CardIO/libCardIO.a" framework="true" />
-        <source-file src="src/ios/CardIO/libopencv_core.a" framework="true" />
-        <source-file src="src/ios/CardIO/libopencv_imgproc.a" framework="true" />
-        
+
         <!-- link libraries for CardIO -->
-        <framework src="Accelerate.framework" />
         <framework src="AudioToolbox.framework" />
         <framework src="AVFoundation.framework" />
         <framework src="CoreGraphics.framework" />
