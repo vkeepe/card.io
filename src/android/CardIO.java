@@ -21,7 +21,7 @@ import android.content.Intent;
 
 
 public class CardIO extends CordovaPlugin {
-    
+
     public CallbackContext callbackContext;
     public static JSONObject cardNumber = null;
     public static Boolean expiry;
@@ -30,14 +30,15 @@ public class CardIO extends CordovaPlugin {
     public static Boolean confirm;
     public static Boolean hideLogo;
     public static Boolean suppressManual;
-    
+    public static Boolean usePaypalIcon;
+
     @Override
     public boolean execute(String action, JSONArray args,
                            CallbackContext callbackContext) {
-        
+
         // TODO Auto-generated method stub
         this.callbackContext = callbackContext;
-        
+
         try {
             // set configurations
             if( action.equals("scan") ) {
@@ -48,11 +49,12 @@ public class CardIO extends CordovaPlugin {
                 confirm = config.getBoolean("suppressConfirm");
                 hideLogo = config.getBoolean("hideLogo");
                 suppressManual = config.getBoolean("suppressManual");
-            
+                usePaypalIcon = config.getBoolean("usePaypalIcon");
+
                 Intent scanIntent = new Intent(cordova.getActivity(),
                                            CardIOMain.class);
                 cordova.getActivity().startActivity(scanIntent);
-            
+
                 PluginResult cardData = new PluginResult(
                                                      PluginResult.Status.NO_RESULT);
                 cardData.setKeepCallback(true);
@@ -70,19 +72,19 @@ public class CardIO extends CordovaPlugin {
             return false;
         } catch (JSONException e) {
             e.printStackTrace();
-            
+
             PluginResult res = new PluginResult(
                                                 PluginResult.Status.JSON_EXCEPTION);
             callbackContext.sendPluginResult(res);
             return false;
         }
-        
+
     }
-    
+
     @Override
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
-        
+
         // send plugin result if success
         JSONObject mImagepath = cardNumber;
         if (mImagepath != null) {
@@ -97,6 +99,6 @@ public class CardIO extends CordovaPlugin {
             cardData.setKeepCallback(false);
             callbackContext.sendPluginResult(cardData);
         }
-        
+
     }
 }

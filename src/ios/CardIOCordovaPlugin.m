@@ -48,7 +48,7 @@
         paymentViewController.collectExpiry = [collectExpiry boolValue];
     }
 
-    NSNumber *disableManualEntryButtons = [options objectForKey:@"supressManual"];
+    NSNumber *disableManualEntryButtons = [options objectForKey:@"suppressManual"];
     if(disableManualEntryButtons) {
         paymentViewController.disableManualEntryButtons = [disableManualEntryButtons boolValue];
     }
@@ -57,12 +57,12 @@
     if(suppressConfirm) {
         paymentViewController.suppressScanConfirmation = [suppressConfirm boolValue];
     }
-    
+
     NSNumber *hideLogo = [options objectForKey:@"hideLogo"];
     if(hideLogo) {
         paymentViewController.hideCardIOLogo = [hideLogo boolValue];
     }
-    
+
     // if it is nil, its ok.
     NSString *languageOrLocale = [[[NSLocale alloc] initWithLocaleIdentifier:[options objectForKey:@"languageOrLocale"]] localeIdentifier];
     if (languageOrLocale) {
