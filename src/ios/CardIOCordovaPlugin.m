@@ -57,12 +57,12 @@
     if(suppressConfirm) {
         paymentViewController.suppressScanConfirmation = [suppressConfirm boolValue];
     }
-    
+
     NSNumber *hideLogo = [options objectForKey:@"hideLogo"];
     if(hideLogo) {
         paymentViewController.hideCardIOLogo = [hideLogo boolValue];
     }
-    
+
     // if it is nil, its ok.
     NSString *languageOrLocale = [[[NSLocale alloc] initWithLocaleIdentifier:[options objectForKey:@"languageOrLocale"]] localeIdentifier];
     if (languageOrLocale) {
@@ -146,7 +146,7 @@
 }
 
 - (void)sendFailureTo:(NSString *)callbackId {
-    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     [self.commandDelegate sendPluginResult:result callbackId:callbackId];
 }
 
