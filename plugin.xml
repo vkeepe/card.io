@@ -6,7 +6,7 @@
     id="com.keepe.cardio"
     version="1.0.9">
     <name>CardIO</name>
-    <description>This plugin allows to add CardIO to your application using CardIO Native library. Supports iOS & Android</description>
+    <description>This plugin allows to add CardIO to your application using CardIO Native library. Supports iOS and Android</description>
     <license>MIT License, see LICENSE.md for details</license>
     <keywords>cordova, card scan, scanner, card.io</keywords>
     <engines>
@@ -57,29 +57,29 @@
         <framework src="libc++.dylib" />
 
     </platform>
-    
+
     <!-- android -->
-    <platform name="android">           
+    <platform name="android">
         <lib-file src="src/android/lib/card.io.jar" arch="device" />
         <lib-file src="src/android/lib/arm64-v8a" arch="device" />
         <lib-file src="src/android/lib/armeabi" arch="device" />
-        <lib-file src="src/android/lib/armeabi-v7a" arch="device" />      
+        <lib-file src="src/android/lib/armeabi-v7a" arch="device" />
         <lib-file src="src/android/lib/mips" arch="device" />
         <lib-file src="src/android/lib/mips64" arch="device" />
         <lib-file src="src/android/lib/x86" arch="device" />
         <lib-file src="src/android/lib/x86_64" arch="device" />
-            
-        <source-file src="src/android/CardIOMain.java" 
-            target-dir="src/com/keepe/plugins/cardio" />            
-        <source-file src="src/android/CardIO.java" 
+
+        <source-file src="src/android/CardIOMain.java"
             target-dir="src/com/keepe/plugins/cardio" />
-                
-        <config-file target="res/xml/config.xml" parent="/*">        
+        <source-file src="src/android/CardIO.java"
+            target-dir="src/com/keepe/plugins/cardio" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="CardIO">
                 <param name="android-package" value="com.keepe.plugins.cardio.CardIO"/>
             </feature>
         </config-file>
-        
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:configChanges="orientation|keyboardHidden" android:name="com.keepe.plugins.cardio.CardIOMain" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
                 <intent-filter>
@@ -91,7 +91,7 @@
                   android:hardwareAccelerated="true"/>
             <activity android:name="io.card.payment.DataEntryActivity" android:screenOrientation="portrait"/>
         </config-file>
-        
+
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.CAMERA" />
             <uses-permission android:name="android.permission.VIBRATE" />
