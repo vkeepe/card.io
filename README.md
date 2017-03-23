@@ -130,7 +130,8 @@ Sample HTML + JS
                     "zip": true,
                     "suppressManual": false,
                     "suppressConfirm": false,
-                    "hideLogo": true
+                    "hideLogo": true,
+                    "usePaypalIcon": false
                 },
                 onCardIOComplete,
                 onCardIOCancel

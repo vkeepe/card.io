@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-keepe-cardio",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "This plugin allows to add CardIO to your application using CardIO Native library. Supports iOS & Android",
   "cordova": {
     "id": "cordova-plugin-keepe-cardio",

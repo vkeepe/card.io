@@ -46,11 +46,28 @@ public class CardIO extends CordovaPlugin {
                 expiry = config.getBoolean("expiry");
                 cvv = config.getBoolean("cvv");
                 zip = config.getBoolean("zip");
-                confirm = config.getBoolean("suppressConfirm");
-                hideLogo = config.getBoolean("hideLogo");
-                suppressManual = config.getBoolean("suppressManual");
-                usePaypalIcon = config.getBoolean("usePaypalIcon");
-
+                
+                try {
+                    confirm = config.getBoolean("suppressConfirm");
+                } catch (JSONException e) {
+                    confirm = false;
+                }
+                try {
+                    hideLogo = config.getBoolean("hideLogo");
+                } catch (JSONException e) {
+                    hideLogo = true;
+                }
+                try {
+                    suppressManual = config.getBoolean("suppressManual");
+                } catch (JSONException e) {
+                    suppressManual = false;
+                }
+                try {
+                    usePaypalIcon = config.getBoolean("usePaypalIcon");
+                } catch (JSONException e) {
+                    usePaypalIcon = false;
+                }
+                
                 Intent scanIntent = new Intent(cordova.getActivity(),
                                            CardIOMain.class);
                 cordova.getActivity().startActivity(scanIntent);
