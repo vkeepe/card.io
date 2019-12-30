@@ -1,5 +1,5 @@
 module.exports = function(ctx) {
-    var Q = ctx.requireCordovaModule('q');
+    var Q = require('q');
     var deferral = new Q.defer();
     
     var exec = require('child_process').exec, child;
